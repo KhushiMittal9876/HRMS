@@ -1,17 +1,14 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { themes } from '../utils/themes';
 
-function Addtheme() {
+function Addtheme({ onThemeChange }) {
     const [theme, setTheme] = useState(()=>{
         return localStorage.getItem("theme") || "light" ;
     });
-    useEffect(()=>{
-    document.querySelector("body").setAttribute("data-theme", theme);
-    localStorage.setItem("theme", theme); // Save theme to local storage
-    },[theme]);
 
     const changeTheme = (newTheme) => {
         setTheme(newTheme);
+        onThemeChange(newTheme);
       };
   return (
     <div className="p-10">

@@ -50,9 +50,7 @@ const Sidebar = () => {
         Logout
       </button>
     </div>
-
-    
-  );
+);
 };
 
 export default Sidebar;
